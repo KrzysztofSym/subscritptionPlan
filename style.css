@@ -1,0 +1,235 @@
+/* Add CSS here */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');
+/*===== VARIABLES CSS =====*/
+
+:root {
+    --h1-fs: 2rem;    --h1-fs-media: 3rem; 
+    --h2-fs: 1.5rem;  --h2-fs-media: 2rem;
+    --h3-fs: 1.3rem;  --h3-fs-media: 1.8rem;
+    --h4-fs: 1.1rem;  --h4-fs-media: 1.5rem;
+    --p-fs: .8rem;    --p-fs-media: 1.1rem;
+    --a-fs: .7rem;    --a-fs-media: 1.1rem;
+    --li-fs: .7rem;   --li-fs-media: 1.1rem;    
+
+    --clr-bg-main: #f1f4ff;
+    --clr-bg-pri: #a9e5e7;
+    --clr-bg-sec: #f3fafa;
+    --clr-acc-main: #00bea6;
+    --clr-acc-pri: #009885;
+    --clr-acc-sec: #33cbb8;
+    --clr-acc-thi: #d80000;
+    --clr-acc-four: #ad0000;
+    --clr-acc-fif: #e03333;
+    --clr-text-main: #1b245a;
+    --clr-text-pri: #36454F;  
+    
+    --shadow-color: #33cbb8;    
+    --main-ff: 'Poppins', sans-serif;
+  }
+
+/*===== BASE =====*/
+
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--main-ff);
+    font-size: var(--p-fs);
+    background: var(--clr-bg-main);
+    color: var(--clr-text-main);
+    width: 100%;
+    min-height: 100vh;
+}   
+
+h1, h2, h3, h4,
+p, a, li {
+    margin: 0;
+}
+
+h1 {font-size: var(--h1-fs);}
+h2 {font-size: var(--h2-fs);}
+h3 {font-size: var(--h3-fs);}
+h4 {font-size: var(--h4-fs);}
+
+p, a, li {font-size: var(--p-fs);}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--clr-text-main);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+@keyframes scaleUp {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+
+    }
+}
+    /* animation: scaleUp 1s ease-in-out;
+    transform-origin: center center; */
+
+/*===== BUTTONS =====*/
+
+.btn {
+    display: inline-block;
+    background-color:  var(--clr-text-main);
+    color: #fff;
+    padding: .5rem 1.5rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: .2s;
+    width: 100%;
+}
+  
+.btn:hover {
+    box-shadow: 0 10px 36px rgba(0, 0, 0, .15);
+}
+
+.btn:active {
+    scale: .97;
+}
+
+/*===== PROJECT CSS =====*/
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    max-width: 350px;
+    background-color: var(--clr-bg-main);
+    position: relative;
+    animation: scaleUp 1s ease-in-out;
+    transform-origin: center center;
+    padding: 2rem;
+    text-align: center;
+    border-radius: .3rem;
+    box-shadow: 0px 8px 30px -10px var(--clr-text-pri);
+}
+
+.logo {
+    position: relative;
+    width: 5rem;
+    height: 5rem;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 1px solid lightgray;
+    margin-bottom: 1rem;
+}
+
+.logo > div {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(200%, -200%);
+    transition: .5s;
+}
+
+.logo i {
+    font-size: 2rem;
+}
+
+.logo > .active {
+    position: absolute;
+    text-align: center;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.value {
+    position: relative;
+    line-height: 1.5rem;
+    width: 5rem;
+    text-align: center;
+   overflow: hidden;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.price-list p {
+    position: absolute;
+    font-size: 1.3rem;
+    top: 0;
+    margin-left: .5rem;
+
+    right: -200%;
+    transition: .5s;
+}
+
+.price-list .active {
+    position: relative;
+    width: 3rem;
+    right: 0;
+}
+
+.term {
+    font-size: .7rem;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto 2rem;
+}
+
+.down {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    margin-bottom: .5rem;
+}
+
+.down p {
+    width: 2.5rem;
+    line-height: 1.7rem;
+    border-radius: .6rem;
+    border: 2px solid lightgray;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.down .active {
+    background-color: var(--clr-text-main);
+    border: 2px solid var(--clr-text-main);
+    color: white;
+
+}
+
+.info {
+    margin-bottom: 1rem;
+}
+
+
